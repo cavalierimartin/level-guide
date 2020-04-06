@@ -1,0 +1,26 @@
+<app-title></app-title>
+<div class="row">
+  <div class="col-md-4 col-xs-12">
+    <app-adquired-skills [levels]="info.levels"></app-adquired-skills>
+  </div>
+  <div class="col-md-4 col-xs-12">
+    <div class="row">
+      <div class="col-6">
+        <app-player></app-player>
+      </div>
+      <div class="col-6">
+        <app-level-line [levels]="levelLine"></app-level-line>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-12">
+    <app-next-lvl [levels]="info.levels"></app-next-lvl>
+  </div>
+</div>
+<!-- 
+<div class="row">
+  <div class="col-12">
+    <app-level-line></app-level-line>
+  </div>
+</div>
+-->

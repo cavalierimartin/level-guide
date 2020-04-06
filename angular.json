@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "lvl-tracker": {
@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lvl-tracker"
+    }
+  },
+  "defaultProject": "lvl-tracker",
+  "cli": {
+    "analytics": "7daecda5-8736-4a06-a6fc-af52ff4783d4"
+  }
 }

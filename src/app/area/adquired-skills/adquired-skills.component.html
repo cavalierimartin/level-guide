@@ -1,0 +1,20 @@
+<div id="">
+  <div *ngFor="let level of levels" id="ADL-{{level.position}}" [hidden]="!(level.position == idActualSkill)">
+    <div *ngFor="let skill of level.skills" class="card">
+      <div class="card-header collapsed" id="adquiredSkill-{{ skill.id }}" data-toggle="collapse"
+        attr.data-target="#collapse-AS-{{ skill.id }}" attr.aria-expanded="false"
+        attr.aria-controls="collapse-AS-{{ skill.id }}">
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+            {{ skill.name }}
+          </button>
+        </h5>
+      </div>
+      <div id="collapse-AS-{{ skill.id }}" class="collapse" attr.aria-labelledby="adquiredSkill-{{ skill.id }}">
+        <div class="card-body">
+          {{ skill.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
