@@ -1,6 +1,43 @@
-<div *ngIf="nextLevel; else noMoreLvls" id="" >
-  <div *ngFor="let skill of nextLevel.skills" class="card">
-    <div class="card-header collapsed" id="nextLvlSkill-{{ skill.id }}" data-toggle="collapse" attr.data-target="#collapse-NLS-{{ skill.id }}" attr.aria-expanded="false" attr.aria-controls="collapse-NLS-{{ skill.id }}">
+<div id="">
+  <div *ngFor="let level of levels" id="NL-{{level.position}}" class="NL-container"
+    [hidden]="!(level.position == idNextLevel)">
+    <div *ngFor="let skill of level.skills" class="card">
+      <div class="card-header collapsed" id="NLS-{{ skill.id }}" data-toggle="collapse"
+        attr.data-target="#collapse-NLS-{{ skill.id }}" attr.aria-expanded="false"
+        attr.aria-controls="collapse-NLS-{{ skill.id }}">
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+            {{ skill.name }}
+          </button>
+        </h5>
+      </div>
+      <div id="collapse-NLS-{{ skill.id }}" class="collapse" attr.aria-labelledby="NLS-{{ skill.id }}">
+        <div class="card-body">
+          {{ skill.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="NL-{{ levels.length + 1 }}" class="NL-container"
+    [hidden]="!((levels.length + 1) == idNextLevel)">
+    <div class="card">
+      <div class="card-header collapsed">
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+            You re the best!
+          </button>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngFor="let level of levels" id="nextLvlSkill-{{level.position}}" class="nextLvlSkill-container"
+  [hidden]="!(level.position == nextLevel.id)">
+  <div *ngFor="let skill of level.skills" class="card">
+    <div class="card-header collapsed" id="nextLvlSkill-{{ skill.id }}" data-toggle="collapse"
+      attr.data-target="#collapse-NLS-{{ skill.id }}" attr.aria-expanded="false"
+      attr.aria-controls="collapse-NLS-{{ skill.id }}">
       <h5 class="mb-0">
         <button class="btn btn-link">
           {{ skill.name }}
@@ -14,15 +51,4 @@
     </div>
   </div>
 </div>
-
-<ng-template #noMoreLvls>
-  <div class="card">
-    <div class="card-header collapsed">
-      <h5 class="mb-0">
-        <button class="btn">
-          You are in the peak!
-        </button>
-      </h5>
-    </div>
-  </div>
-</ng-template>
+ -->

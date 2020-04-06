@@ -10,18 +10,23 @@ export class AdquiredSkillsComponent implements OnInit{
 
   @Input('levels') levels: any; // #FIXME: Crear la clase Level
   idArea;
-  idActualSkill;
+  idLvl;
   //level;
 
   constructor( private actRoute: ActivatedRoute ) { 
     this.idArea = this.actRoute.snapshot.params.id;
-    this.idActualSkill = this.actRoute.snapshot.params.idSkill;
+    this.idLvl = this.actRoute.snapshot.params.idLvl;
   }
 
   ngOnInit(): void {
 //    this.level = this.levels.find( lvl => lvl.id == this.idActualSkill);
     //console.log(this.level);
-    
+    let lastId = this.idLvl;
+    this.actRoute.params.subscribe( params => {
+      $('#ADL-'+lastId).attr('hidden',"true");
+      $('#ADL-'+params.idLvl).removeAttr('hidden');
+      lastId = params.idLvl;
+    });
   }
 
   

@@ -1,5 +1,5 @@
 <div id="">
-  <div *ngFor="let level of levels" id="ADL-{{level.position}}" [hidden]="!(level.position == idActualSkill)">
+  <div *ngFor="let level of levels" id="ADL-{{level.position}}" class="ADL-container" [hidden]="!(level.position == idLvl)">
     <div *ngFor="let skill of level.skills" class="card">
       <div class="card-header collapsed" id="adquiredSkill-{{ skill.id }}" data-toggle="collapse"
         attr.data-target="#collapse-AS-{{ skill.id }}" attr.aria-expanded="false"

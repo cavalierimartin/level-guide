@@ -1,10 +1,8 @@
 <div class="line-component-container row">
   <!-- Arranca el foreach-->
   <div *ngFor="let level of levels; last as isLast" class="area-lvl-container col-12">
-    <div class="area-lvl-name col-12" id="al{{level.id}}" title="{{level.description}}">
-      <a [routerLink]="['/area/1/'+level.id]">
+    <div [routerLink]="['/area/1/'+level.id]" class="area-lvl-name col-12" id="al{{level.id}}" title="{{level.description}}">
         {{ level.name }}
-      </a>
     </div>
     <div *ngIf="!isLast" class="line-lvl-separator offset-5 col-2"></div>
   </div>
