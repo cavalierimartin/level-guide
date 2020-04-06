@@ -186,7 +186,8 @@ export class AreaComponent implements OnInit {
       return {
         'id': sk['id'],
         'name': sk['name'],
-        'description': sk['description']
+        'description': sk['description'],
+        'position': sk['position']
       }
     });
     
