@@ -22,19 +22,9 @@ export class NextLvlComponent implements OnInit {
   }
 
   ngOnInit(): void {
-/*    let position = this.levels.find( lvl => lvl.id == this.idLvl).position;
-    position++;
-    this.nextLevel = this.levels.find( lvl => lvl.position == position);
-    console.log(this.nextLevel);
-
-    const maxLvl = this.levels.lenght;
-    */
     let lastId = this.idLvl;
-
     this.actRoute.params.subscribe( params => {
-
       const toShow = Number(params.idLvl) + 1;
-
       $('#NL-'+lastId).attr('hidden',"true");
       $('#NL-'+toShow).removeAttr('hidden');
       lastId = toShow;

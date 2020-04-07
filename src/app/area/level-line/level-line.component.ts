@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as $ from 'jquery';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -27,21 +26,6 @@ export class LevelLineComponent implements OnInit {
 
       });
 
-   }
-
-   prepareInfo(){
-//      $("#al"+idLvl).parent().addClass('active');
-      // this.adquiredSkills = this.info.levels.find( as => as.position === 1);
-      // this.nextLvlSkills = this.info.levels.find( as => as.position === 2);
-
-  
-      // this.titleInfo = {
-      //   'universe': this.info.universe.name,
-      //   'area': this.info.area.name
-      // }
-         
-  
-    }
-  
+   }  
 
 }

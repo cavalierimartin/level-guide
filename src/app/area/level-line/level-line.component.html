@@ -1,5 +1,4 @@
 <div class="line-component-container row">
-  <!-- Arranca el foreach-->
   <div *ngFor="let level of levels; last as isLast" class="area-lvl-container col-12" [ngClass]="{'active': idLevel == level.position}">
     <div [routerLink]="['/area/1/'+level.id]" class="area-lvl-name col-12" id="al{{level.id}}" title="{{level.description}}">
         {{ level.name }}

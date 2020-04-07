@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-area',
@@ -176,8 +177,6 @@ export class AreaComponent implements OnInit {
   }
 
   prepareInfo(){
-//    this.adquiredSkills = this.info.levels.find( as => as.position === 1);
-//    this.nextLvlSkills = this.info.levels.find( as => as.position === 2);
     this.orderedLevels = this.info.levels.sort(function(a,b){
       return a.position > b.position ? -1: a.position < b.position ? 1 : 0
     });
@@ -190,8 +189,6 @@ export class AreaComponent implements OnInit {
         'position': sk['position']
       }
     });
-    
-    
 
   }
 

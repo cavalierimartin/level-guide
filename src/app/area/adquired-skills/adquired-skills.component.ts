@@ -9,18 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 export class AdquiredSkillsComponent implements OnInit{
 
   @Input('levels') levels: any; // #FIXME: Crear la clase Level
-  idArea;
+  // idArea;
   idLvl;
-  //level;
-
+  
   constructor( private actRoute: ActivatedRoute ) { 
-    this.idArea = this.actRoute.snapshot.params.id;
+    // this.idArea = this.actRoute.snapshot.params.id;
     this.idLvl = this.actRoute.snapshot.params.idLvl;
   }
 
   ngOnInit(): void {
-//    this.level = this.levels.find( lvl => lvl.id == this.idActualSkill);
-    //console.log(this.level);
     let lastId = this.idLvl;
     this.actRoute.params.subscribe( params => {
       $('#ADL-'+lastId).attr('hidden',"true");
