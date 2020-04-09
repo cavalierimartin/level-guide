@@ -9,10 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 export class LevelLineComponent implements OnInit {
 
   @Input('levels') levels: any;
+  idUniverse;
+  idArea;
   idLevel;
   
    constructor( private actRoute: ActivatedRoute) {
-      this.idLevel =  this.actRoute.snapshot.params.idLvl;
+      this.idUniverse =  this.actRoute.snapshot.params.idUniverse;
+      this.idArea =  this.actRoute.snapshot.params.idArea;
+      this.idLevel =  this.actRoute.snapshot.params.idLevel;
    }
 
    ngOnInit(): void {

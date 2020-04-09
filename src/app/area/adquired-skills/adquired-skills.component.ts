@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Skill } from 'src/app/models/skill';
 
 @Component({
   selector: 'app-adquired-skills',
@@ -8,24 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdquiredSkillsComponent implements OnInit{
 
-  @Input('levels') levels: any; // #FIXME: Crear la clase Level
-  // idArea;
-  idLvl;
+  @Input('adquiredSkills') skills: Skill[];
+  idLevel;
   
   constructor( private actRoute: ActivatedRoute ) { 
-    // this.idArea = this.actRoute.snapshot.params.id;
-    this.idLvl = this.actRoute.snapshot.params.idLvl;
+    this.idLevel = this.actRoute.snapshot.params.idLevel;
   }
 
   ngOnInit(): void {
-    let lastId = this.idLvl;
-    this.actRoute.params.subscribe( params => {
-      $('#ADL-'+lastId).attr('hidden',"true");
-      $('#ADL-'+params.idLvl).removeAttr('hidden');
-      lastId = params.idLvl;
-    });
   }
-
-  
 
 }

@@ -1,7 +1,18 @@
-<div id="">
-  <div *ngFor="let level of levels" id="NL-{{level.position}}" class="NL-container"
-    [hidden]="!(level.position == idNextLevel)">
-    <div *ngFor="let skill of level.skills" class="card">
+<div class="">
+  <span>Skills to learn</span>
+  <div *ngIf="skills === 'top'; else skillsBlock" id="NLS-x" class="NLS-container">
+    <div class="card">
+      <div class="card-header collapsed">
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+            You re the best!
+          </button>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <ng-template #skillsBlock>
+    <div *ngFor="let skill of skills" class="card NLS-container" id="NLS-{{skill.id}}">
       <div class="card-header collapsed" id="NLS-{{ skill.id }}" data-toggle="collapse"
         attr.data-target="#collapse-NLS-{{ skill.id }}" attr.aria-expanded="false"
         attr.aria-controls="collapse-NLS-{{ skill.id }}">
@@ -17,17 +28,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="NL-{{ levels.length + 1 }}" class="NL-container"
-    [hidden]="!((levels.length + 1) == idNextLevel)">
-    <div class="card">
-      <div class="card-header collapsed">
-        <h5 class="mb-0">
-          <button class="btn btn-link">
-            You re the best!
-          </button>
-        </h5>
-      </div>
-    </div>
-  </div>
+  </ng-template>
 </div>

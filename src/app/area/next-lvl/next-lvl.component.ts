@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Skill } from 'src/app/models/skill';
 
 @Component({
   selector: 'app-next-lvl',
@@ -8,28 +9,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NextLvlComponent implements OnInit {
 
-  @Input('levels') levels: any; // #FIXME: Crear la clase Level
+  @Input('nextLevelSkills') skills: Skill[] | 'top';
   idArea;
-  idLvl;
+  idLevel;
   idActualSkill;
   nextLevel;
   idNextLevel;
-
+  
   constructor( private actRoute: ActivatedRoute  ) {
-    this.idArea = Number(this.actRoute.snapshot.params.id);
-    this.idLvl =  Number(this.actRoute.snapshot.params.idLvl);
-    this.idNextLevel = this.idLvl + 1;
+    this.idArea = Number(this.actRoute.snapshot.params.idArea);
+    this.idLevel =  Number(this.actRoute.snapshot.params.idLevel);
+    this.idNextLevel = this.idLevel + 1;
+    console.log(this.skills);
   }
 
   ngOnInit(): void {
-    let lastId = this.idLvl;
-    this.actRoute.params.subscribe( params => {
-      const toShow = Number(params.idLvl) + 1;
-      $('#NL-'+lastId).attr('hidden',"true");
-      $('#NL-'+toShow).removeAttr('hidden');
-      lastId = toShow;
-    });
-
   }
 }
 
