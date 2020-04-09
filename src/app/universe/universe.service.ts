@@ -7,7 +7,7 @@ import { Universe } from '../models/universe';
 @Injectable({
   providedIn: 'root'
 })
-export class AreaService {
+export class UniverseService {
 
   constructor() { }
 

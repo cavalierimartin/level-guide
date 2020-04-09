@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, ActivatedRoute, ParamMap } from '@angular/router';
 import * as $ from 'jquery';
 import { Universe } from '../models/universe';
-import { AreaService } from './area.service';
+import { UniverseService } from './universe.service';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Skill } from '../models/skill';
 import { Level } from '../models/level';
 
 @Component({
-  selector: 'app-area',
-  templateUrl: './area.component.html',
-  styleUrls: ['./area.component.scss']
+  selector: 'app-universe',
+  templateUrl: './universe.component.html',
+  styleUrls: ['./universe.component.scss']
 })
-export class AreaComponent implements OnInit {
+export class UniverseComponent implements OnInit {
 
-  constructor(private areaService: AreaService, private actRoute: ActivatedRoute) { }
+  constructor(private universeService: UniverseService, private actRoute: ActivatedRoute) { }
 
   fullUniverse: Universe;
 
@@ -30,7 +30,7 @@ export class AreaComponent implements OnInit {
     const idArea = +this.actRoute.snapshot.params.idArea;
     const universeId = +this.actRoute.snapshot.params.idUniverse; // #TODO: Checker para cada uno de estos atributos (así podemos avisar si falla, qué falló)
 
-    this.areaService.getUniverseById(universeId).subscribe(data => {
+    this.universeService.getUniverseById(universeId).subscribe(data => {
       this.fullUniverse = data;
 
       this.levelLineInfo = this.sortLevels(data.levels);

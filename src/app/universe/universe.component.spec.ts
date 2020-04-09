@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AreaComponent } from './area.component';
+import { UniverseComponent } from './universe.component';
 
-describe('AreaComponent', () => {
-  let component: AreaComponent;
-  let fixture: ComponentFixture<AreaComponent>;
+describe('UniverseComponent', () => {
+  let component: UniverseComponent;
+  let fixture: ComponentFixture<UniverseComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AreaComponent ]
+      declarations: [ UniverseComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AreaComponent);
+    fixture = TestBed.createComponent(UniverseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

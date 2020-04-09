@@ -145,5 +145,56 @@ export const UNIVERSES: Universe[] = [
         ]
       },
     ]
+  },
+  {
+    id: 2,
+    name: 'Amway',
+    areas: [{
+      id: 1,
+      name: 'Primeros pines'
+    }
+    ],
+    levels: [{
+      id: 30,
+      name: '9%',
+      description: 'Primer nivel a romper',
+      position: 1,
+      skills: [{
+        id: 20,
+        description: 'Hablar con la flia',
+        name: 'Confianza propia I',
+      }]
+    }, {
+      id: 39,
+      name: '12%',
+      description: 'Segundo nivel a romper',
+      position: 2,
+      skills: [{
+        id: 19,
+        description: 'Hablar con contactos tibios',
+        name: 'Confianza propia II',
+      },
+      {
+        id: 18,
+        description: 'Saberse y a animarse a dar el plan',
+        name: 'Encargándome de mi negocio',
+      }]
+    },
+    {
+      id: 35,
+      name: '15%',
+      description: 'Tercer nivel a romper',
+      position: 3,
+      skills: [{
+        id: 353,
+        description: 'Hablar con contactos desconocidos',
+        name: 'Confianza propia III',
+      },
+      {
+        id: 118,
+        description: 'Saberse y a animarse a dar los números',
+        name: 'Encargándome de mi negocio',
+      }]
+    }]
   }
 ];

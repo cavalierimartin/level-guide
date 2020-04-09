@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AreaComponent } from './area/area.component';
+import { UniverseComponent } from './universe/universe.component';
 
 
 const routes: Routes = [
-  { path: 'area/:idUniverse/:idArea/:idLevel', component: AreaComponent }, //#TODO: Cambiar 'area' por universo, cuando se corrijan los nombres
-  { path: 'area', component: AreaComponent},
-  { path: '', redirectTo: '/area/1/1/1', pathMatch: 'full' },
+  { path: 'universe/:idUniverse/:idArea/:idLevel', component: UniverseComponent },
+  { path: '', redirectTo: '/universe/1/1/1', pathMatch: 'full' },
 //  { path: '**', component: PageNotFoundComponent } // #TODO: Hacer este componente;
-//#TODO: Se puede contemplar que existan múltiples universos;
 ];
 
 @NgModule({
