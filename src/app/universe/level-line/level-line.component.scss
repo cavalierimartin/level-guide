@@ -9,12 +9,14 @@ $selected-color: lightblue;
       text-align: center;
       cursor: pointer;
       border: 1px solid transparent;
+      transition: all 1s;
     }
     .line-lvl-separator {
-      height: 30px;
-      max-width: 30px;
+      height: 35px;
+      max-width: 32px;
       margin: auto;
       background-color: $unselected-color;
+      transition: all 1s;
     }
 
     &.active {
