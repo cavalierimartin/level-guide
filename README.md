@@ -1,8 +1,11 @@
 # LvlTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+
 This is a project developed in 2 - 5 hours after an interview that made me think about developers growing as a game. 
+
 What are the skills of a ssr developer? What do they need to learn to became a sr developer? 
+
 The data is most like an example, it hasn't been studied or something like that.
 
 ## Development server
